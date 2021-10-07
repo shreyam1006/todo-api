@@ -1,0 +1,107 @@
+.App{
+  display: flex;
+}
+
+.App input{
+  border: none;
+  outline: none;
+  padding:8px;
+}
+
+.App select{
+  border: none;
+  padding:8px;
+  outline: none;
+}
+
+.navcontainer{
+  width: 20%;
+  min-height: 100vh;
+  background-color: white;
+  color: rgb(184, 184, 184);
+  border-right: 1px solid rgb(199, 198, 198);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.navcontainer h3{
+  margin-left: 40px;
+  color: black;
+}
+
+.navcontainer .navoption{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.navoption h5{
+  margin-left: 20px;
+  font-size: 100%;
+}
+
+.navoption:hover{
+  color: black;
+  border-right:3px solid green;
+}
+
+.inputcontainer{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.topnavcontainer{
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+  align-items: center;
+}
+
+.topnavoptions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filtercontainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.loginsignup{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(226, 235, 226);
+  justify-content: center;
+}
+
+.loginsignup input{
+  width: 600px;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.loginsignup input::placeholder{
+  font-size: 20px;
+  font-style: italic;
+}
+
+.loginsignup button{
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  background-color: rgb(247, 150, 40);
+  border-radius: 10px;
+  border: none
+}
