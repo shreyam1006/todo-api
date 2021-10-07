@@ -8,17 +8,21 @@ const TodoList = () => {
     
 
     const fetchMyAPI=async()=>{
-      const token = JSON.parse(localStorage.getItem('login-info')).token;
-    setAccessToken(token)
+      const loginInfo = await JSON.parse(localStorage.getItem('login-info'));
+      // console.log(token)
+      setAccessToken(loginInfo.token)
+      console.log(accessToken)
       let response=await fetch('https://api-nodejs-todolist.herokuapp.com/task', {
         method: "GET",
         headers: {
-          'Authorization': 'Bearer '+accessToken,
+          'Authorization': 'Bearer '+ accessToken,
           'Content-Type': 'application/json',
         },
       })
       response= await response.json()
+      // console.log(response)
       setAllTasks(response.data)
+      console.log(allTasks)
     }
 
     fetchMyAPI()
