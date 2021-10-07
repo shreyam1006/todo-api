@@ -29,7 +29,7 @@ const Signup = () => {
       .catch((error) => console.log(error));
     localStorage.setItem("user-info", JSON.stringify(result));
     alert("Successfully Signed up");
-    history.push("/login");
+    history.push("/home");
   };
 
   return (

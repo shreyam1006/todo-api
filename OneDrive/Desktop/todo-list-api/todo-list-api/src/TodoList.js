@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
 
 const TodoList = () => {
-  const [accessToken, setAccessToken] = useState('');
-  const [allTasks, setAllTasks] = useState([]);
+  const [accessToken, setAccessToken] = useState(null);
+  const [allTasks, setAllTasks] = useState(null);
 
-  useEffect(async() => {
-    const loginInfo = await JSON.parse(localStorage.getItem('login-info'));
-    setAccessToken(loginInfo.token);
-    const bearer = 'Bearer ' + accessToken;
-     await fetch('https://api-nodejs-todolist.herokuapp.com/task', {
-      method: "GET",
-      headers: {
-        'Authorization': bearer,
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setAllTasks(data.data)
+  useEffect(() => {
+    
+
+    const fetchMyAPI=async()=>{
+      const token = JSON.parse(localStorage.getItem('login-info')).token;
+    setAccessToken(token)
+      let response=await fetch('https://api-nodejs-todolist.herokuapp.com/task', {
+        method: "GET",
+        headers: {
+          'Authorization': 'Bearer '+accessToken,
+          'Content-Type': 'application/json',
+        },
       })
-      .catch((error) => error)
-  }, [accessToken]);
+      response= await response.json()
+      setAllTasks(response.data)
+    }
 
-  console.log(allTasks)
+    fetchMyAPI()
+  }, [accessToken]);
 
   return (
     <div>
